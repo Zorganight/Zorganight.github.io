@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kimya Proje Ödevi</title>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, Helvetica, sans-serif;
+            color: grey;
+            
+        }
+
+        model-viewer {
+            width: 100%;
+            height: 100%;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 5px;
+            padding-bottom: 25px;
+        }
+
+        .button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 150px;
+            height: 50px;
+            background-color: #ccc;
+            border-radius: 25px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            color: #fff;
+            grid-area: footer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Kimya Proje Ödevi Hüseyin Avni Sarıkaya 12-F 991</h1>
+    <model-viewer id="toggle-model" src="ahtapot.glb" alt="A 3D model of a shishkebab" shadow-intensity="1"
+        camera-controls touch-action="pan-y" auto-rotate></model-viewer>
+    <script>
+        const models = ['ahtapot.glb', 'test.glb'];
+        const toggleModel = document.querySelector('#toggle-model');
+        let j = 0;
+        function myFunction() {
+            toggleModel.setAttribute('src', `${models[j++ % 2]}`);
+        }
+        function Notes(){
+            <div class="container">
+                <button class="button grid-item" onclick="myFunction()">Sonraki Model</button>
+            </div>
+        }   
+    </script>
+</body>
+</html>
